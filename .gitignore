@@ -1,0 +1,17 @@
+
+# Executables
+*.exe
+
+# Object and compiled files
+*.o
+*.obj
+*.dll
+*.lib
+*.pdb
+
+# Build directories
+build/
+cmake-build-*/
+
+# IDE settings
+.vscode/
