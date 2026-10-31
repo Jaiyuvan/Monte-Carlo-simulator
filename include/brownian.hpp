@@ -5,7 +5,7 @@
 #include <random>
 #include <cmath>
 
-void random_number(std::vector<double>& data, int size);
+void random_number(std::vector<double>& data, int size,std::mt19937& engine,std::normal_distribution<double>& dist);
 
 double brownian_model(
     double z,
@@ -15,4 +15,5 @@ double brownian_model(
     double current_price
 );
 
-std::vector<double> simulator();
+std::vector<double> simulator(std::mt19937& engine,std::normal_distribution<double>& dist);
+
