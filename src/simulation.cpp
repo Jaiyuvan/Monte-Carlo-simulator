@@ -2,7 +2,7 @@
 #include "brownian.hpp"
 #include<iostream>
 int main(){
-    std::mt19937 engine(60);
+    std::mt19937 engine(42);
     std::normal_distribution<double> dist(0.0,1.0);
     std::vector<double> final_prices;
     for (int i=1;i<=1000;i++){
@@ -13,6 +13,10 @@ int main(){
         std::cout<<"Stock: "<<i << "\n";
     }
     double avg=mean(final_prices);
+    double monteEstimation=empricalprobability(final_prices,110.0);
+    double theorticalValue=theoriticalprobability(110.0,100.0,0.2,0.1,1.0);
+    std::cout<<"Theoritical Value:"<<theorticalValue<<"\n";
     std::cout << "Mean : "<<avg<<"\n";
     std::cout << "Variance : "<<variance(final_prices,avg)<<"\n";
+    std::cout << "Monte Carlo Estimation : "<<monteEstimation;
 }
