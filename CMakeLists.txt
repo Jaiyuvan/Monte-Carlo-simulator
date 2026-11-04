@@ -13,3 +13,13 @@ target_include_directories(MonteCarlosimulator
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+add_executable(UnitTests
+tests/tests.cpp
+src/brownian.cpp
+src/statistics.cpp
+)
+
+target_include_directories(UnitTests PRIVATE  
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
