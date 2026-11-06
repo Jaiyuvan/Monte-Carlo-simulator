@@ -24,7 +24,7 @@ double variance(const std::vector<double>& data, double avg) {
     }
     return diffSq / (data.size() - 1);
 }
-double empricalprobability(const std::vector<double>& data,double min_price){
+double empricalProbability(const std::vector<double>& data,double min_price){
     int counter=0;
     for (double i:data){
         if(i>min_price){
@@ -34,7 +34,7 @@ double empricalprobability(const std::vector<double>& data,double min_price){
     double p=static_cast<double>(counter)/data.size();
     return p;
 }
-double theoriticalprobability(double threshold,double initial_price,double volatility,double drift,double time){
+double theoriticalProbability(double threshold,double initial_price,double volatility,double drift,double time){
     double thre_init=std::log(threshold/initial_price);
     double k = (drift- (volatility*volatility)/2)*time;
     double x = (thre_init-k)/(volatility*std::sqrt(time));

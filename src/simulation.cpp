@@ -13,8 +13,8 @@ int main(){
         std::cout<<"Stock: "<<i << "\n";
     }
     double avg=mean(final_prices);
-    double monteEstimation=empricalprobability(final_prices,110.0);
-    double theorticalValue=theoriticalprobability(110.0,100.0,0.2,0.1,1.0);
+    double monteEstimation=empricalProbability(final_prices,110.0);
+    double theorticalValue=theoriticalProbability(110.0,100.0,0.2,0.1,1.0);
     std::cout<<"Theoritical Value:"<<theorticalValue<<"\n";
     std::cout << "Mean : "<<avg<<"\n";
     std::cout << "Variance : "<<variance(final_prices,avg)<<"\n";
