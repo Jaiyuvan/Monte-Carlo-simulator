@@ -1,5 +1,6 @@
 #include "statistics.hpp"
 #include "brownian.hpp"
+#include"csv_parser.hpp"
 #include<iostream>
 int main(){
     std::mt19937 engine(42);
@@ -19,4 +20,10 @@ int main(){
     std::cout << "Mean : "<<avg<<"\n";
     std::cout << "Variance : "<<variance(final_prices,avg)<<"\n";
     std::cout << "Monte Carlo Estimation : "<<monteEstimation;
+    std::ifstream file("data/sp500.csv");
+    if (!file.is_open()){
+        std::cerr<<"Could not open the file";
+    }
+    std::vector<StockData> prices=parser(file);
+    return 0;
 }

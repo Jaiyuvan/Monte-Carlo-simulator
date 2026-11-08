@@ -7,6 +7,7 @@ add_executable(MonteCarlosimulator
 src/statistics.cpp
 src/simulation.cpp
 src/brownian.cpp
+src/csv_parser.cpp
 )
 
 target_include_directories(MonteCarlosimulator
