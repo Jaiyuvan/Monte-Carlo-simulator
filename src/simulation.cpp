@@ -3,7 +3,7 @@
 #include"csv_parser.hpp"
 #include<iostream>
 int main(){
-    std::mt19937 engine(42);
+    /*std::mt19937 engine(42);
     std::normal_distribution<double> dist(0.0,1.0);
     std::vector<double> final_prices;
     for (int i=1;i<=1000;i++){
@@ -19,11 +19,15 @@ int main(){
     std::cout<<"Theoritical Value:"<<theorticalValue<<"\n";
     std::cout << "Mean : "<<avg<<"\n";
     std::cout << "Variance : "<<variance(final_prices,avg)<<"\n";
-    std::cout << "Monte Carlo Estimation : "<<monteEstimation;
-    std::ifstream file("data/sp500.csv");
-    if (!file.is_open()){
-        std::cerr<<"Could not open the file";
-    }
+    std::cout << "Monte Carlo Estimation : "<<monteEstimation<<"\n";*/
+    for (int i=0;i<3;i++){
+        std::ifstream file("data/sp500.csv");
+        if (!file.is_open()){
+            std::cerr<<"Could not open the file";
+        }
     std::vector<StockData> prices=parser(file);
+
+    }
+    
     return 0;
 }

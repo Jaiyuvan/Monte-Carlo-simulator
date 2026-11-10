@@ -3,7 +3,9 @@
 #include<sstream>
 #include<string>
 #include<vector>
+#include<charconv>
 #include <stdexcept>
+
 
 //Struct for storing the stock data
 struct StockData {
@@ -13,7 +15,7 @@ struct StockData {
     double high{};
     double low{};
     double close{};
-    
+
     long volume{};
 };
 std::vector<StockData> parser(std::ifstream& csv_file);
