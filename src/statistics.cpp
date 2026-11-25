@@ -35,6 +35,7 @@ double empricalProbability(const std::vector<double>& data,double min_price){
     return p;
 }
 double theoriticalProbability(double threshold,double initial_price,double volatility,double drift,double time){
+    
     double thre_init=std::log(threshold/initial_price);
     double k = (drift- (volatility*volatility)/2)*time;
     double x = (thre_init-k)/(volatility*std::sqrt(time));
