@@ -1,4 +1,5 @@
 #include"brownian.hpp"
+#include"csv_parser.hpp"
 //Generating numbers in normal distribution
 void random_number(std::vector<double>& data, int size,std::mt19937& engine,std::normal_distribution<double>& dist) {
     for (size_t i = 0; i < size; i++) {
@@ -16,9 +17,9 @@ double brownian_model(double z,double volatility,double growth_rate,double time,
 }
 
 // Used to generate different future price with current price
-std::vector<double> future_price(const std::vector<double>& data){
+std::vector<double> future_price(const std::vector<double>& data,double initial_price){
     //right now initial price of the asset is 100
-    std::vector<double> future_prices{100};
+    std::vector<double> future_prices{initial_price};
     
     for (size_t i=0;i<data.size();i++){
         double current_price=future_prices.back();
@@ -27,8 +28,11 @@ std::vector<double> future_price(const std::vector<double>& data){
     }
     return future_prices;
 }
-std::vector<double> simulator(std::mt19937& engine,std::normal_distribution<double>& dist){
+
+//used to generate 252 ie a year worth of random numbers from normal distribution
+//Also calls the future_price 
+std::vector<double> simulator(std::mt19937& engine,std::normal_distribution<double>& dist,double initial_price){
         std::vector<double>data;
         random_number(data,252,engine,dist);
-        return future_price(data);        
+        return future_price(data,initial_price);        
 }

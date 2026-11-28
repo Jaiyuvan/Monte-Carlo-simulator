@@ -8,6 +8,7 @@ src/statistics.cpp
 src/simulation.cpp
 src/brownian.cpp
 src/csv_parser.cpp
+src/csv_export.cpp
 )
 
 target_include_directories(MonteCarlosimulator

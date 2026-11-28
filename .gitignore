@@ -15,3 +15,5 @@ cmake-build-*/
 
 # IDE settings
 .vscode/
+
+sp500.csv

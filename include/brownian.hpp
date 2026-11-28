@@ -15,5 +15,5 @@ double brownian_model(
     double current_price
 );
 
-std::vector<double> simulator(std::mt19937& engine,std::normal_distribution<double>& dist);
+std::vector<double> simulator(std::mt19937& engine,std::normal_distribution<double>& dist,double initial_price);
 
