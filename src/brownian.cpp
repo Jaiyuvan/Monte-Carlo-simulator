@@ -23,7 +23,7 @@ std::vector<double> future_price(const std::vector<double>& data,double initial_
     
     for (size_t i=0;i<data.size();i++){
         double current_price=future_prices.back();
-        double k=brownian_model(data[i],0.2,0.1,1.0/252.0,current_price);
+        double k=brownian_model(data[i],0.5,0.05,1.0/252.0,current_price);
         future_prices.push_back(k);
     }
     return future_prices;
